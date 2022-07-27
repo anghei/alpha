@@ -1,6 +1,8 @@
 -- Даны месячные срезы сегментов клиентов,
 -- нужно получить по каждому клиенту периоды действия каждого сегмента.
 
+-- Используется PostgreSQL
+
 with seg_1 as (select s.clientid,
        min(s.date) over(partition by s.clientid) seg_1_start_date,
        max(s.date) over(partition by s.clientid) seg_1_end_date

@@ -1,5 +1,5 @@
 -- Отобрать клиентов по г. Москва с суммарными остатками по клиенту от 20 000 на последнюю дату.
-
+-- Используется PostgreSQL
 
 with tb1 as (select *,
        rank() over (partition by account_num order by date desc) rnk
